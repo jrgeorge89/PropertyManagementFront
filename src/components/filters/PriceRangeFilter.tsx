@@ -25,12 +25,16 @@ export function PriceRangeFilter({
 
   return (
     <div className="flex flex-col">
-      <label className="mb-2 text-sm font-medium text-gray-700">
+      <span className="mb-2 text-sm font-medium text-gray-700">
         Rango de Precio
-      </label>
+      </span>
       <div className="grid grid-cols-2 gap-4">
-        <div>
+        <div className="flex flex-col">
+          <label htmlFor="precio-minimo" className="sr-only">
+            Precio mínimo
+          </label>
           <input
+            id="precio-minimo"
             type="number"
             value={minPrice || ''}
             onChange={handleMinChange}
@@ -40,8 +44,12 @@ export function PriceRangeFilter({
             className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
           />
         </div>
-        <div>
+        <div className="flex flex-col">
+          <label htmlFor="precio-maximo" className="sr-only">
+            Precio máximo
+          </label>
           <input
+            id="precio-maximo"
             type="number"
             value={maxPrice || ''}
             onChange={handleMaxChange}

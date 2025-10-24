@@ -35,3 +35,7 @@ Thumbs.db
 .cache/
 .next/cache/
 " > .gitignore
+
+# Coverage Jest
+coverage/
+*.html

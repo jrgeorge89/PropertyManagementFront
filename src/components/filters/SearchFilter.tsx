@@ -21,10 +21,14 @@ export function SearchFilter({
 
   return (
     <div className="flex flex-col">
-      <label className="mb-2 text-sm font-medium text-gray-700">
+      <label
+        htmlFor={`search-${label.toLowerCase()}`}
+        className="mb-2 text-sm font-medium text-gray-700"
+      >
         {label}
       </label>
       <input
+        id={`search-${label.toLowerCase()}`}
         type="text"
         value={value}
         onChange={handleChange}
