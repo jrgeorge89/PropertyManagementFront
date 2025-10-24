@@ -1,4 +1,4 @@
-# Property Management Frontend
+# Sistema de Gestión Inmobiliaria - Frontend
 
 Aplicación web desarrollada en Next.js para la visualización de propiedades inmobiliarias.
 
