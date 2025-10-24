@@ -14,7 +14,7 @@ export function PropertyCardView({ property }: PropertyCardViewProps) {
       className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
     >
       <div className="relative h-48">
-        {property.images && property.images[0] ? (
+        {property.images && property.images.length > 0 ? (
           <Image
             src={property.images[0]}
             alt={property.name}

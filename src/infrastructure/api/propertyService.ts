@@ -2,6 +2,21 @@ import { PropertyFilters, PropertyListItem, Property } from "@/domain/models/pro
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5171';
 
+const mapToPropertyListItem = (apiProperty: any): PropertyListItem => {
+  return {
+    idProperty: apiProperty.idProperty,
+    name: apiProperty.name,
+    address: apiProperty.address,
+    price: apiProperty.price,
+    type: apiProperty.type,
+    images: Array.isArray(apiProperty.images) 
+      ? apiProperty.images.map((img: any) => img.file || img)
+      : apiProperty.imageUrl 
+        ? [apiProperty.imageUrl]
+        : []
+  };
+};
+
 export const getProperties = async (filters?: PropertyFilters): Promise<PropertyListItem[]> => {
   try {
     const queryParams = new URLSearchParams();
@@ -22,7 +37,7 @@ export const getProperties = async (filters?: PropertyFilters): Promise<Property
     }
 
     const data = await response.json();
-    return data;
+    return Array.isArray(data) ? data.map(mapToPropertyListItem) : [];
   } catch (error) {
     console.error("Error fetching properties:", error);
     throw error;
