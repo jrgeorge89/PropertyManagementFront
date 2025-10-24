@@ -1,0 +1,37 @@
+echo "# ─────────────────────────────────────────────
+# IGNORAR ARCHIVOS Y CARPETAS LOCALES (NEXT.JS)
+# ─────────────────────────────────────────────
+
+# Dependencias
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Builds y artefactos de compilación
+.next/
+out/
+dist/
+build/
+.vercel/
+
+# Archivos de entorno
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Archivos del sistema / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.swp
+
+# Cache
+.npm/
+.cache/
+.next/cache/
+" > .gitignore
